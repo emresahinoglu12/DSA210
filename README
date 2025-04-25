@@ -1,13 +1,112 @@
-Project Proposal: DSA 210 proposal Project Proposal: Customer Behavior and Ticket Sales Analysis in a Cinema Hall
+# 🎬 Customer Behavior and Ticket Sales Analysis in a Cinema Hall
 
-Motivation: The cinema industry faces challenges in retaining customers and optimizing ticket sales. Understanding customer behavior, spending patterns, and preferences can help develop strategies for improved engagement and operational efficiency. This project aims to analyze cinema hall ticket sales to identify key customer segments, genre preferences, pricing trends, and factors influencing repeat visits.
+## 📑 Project Overview
+This project analyzes cinema hall ticket sales to understand customer behavior, seating preferences, pricing trends, genre popularity, and factors influencing repeat visits. The aim is to provide actionable insights for optimizing marketing strategies and improving customer retention.
 
-Research Questions & Hypotheses: Which demographic segments contribute the most to cinema revenue? Hypothesis: Older audiences above 40 or more prefer premium seating and higher-priced tickets, while younger audiences between 18-35 visit more frequently.
+---
 
-Dataset Description The dataset includes: Ticket_ID: Unique identifier for each ticket purchase Age: Age of the customer Ticket_Price: Price paid for the ticket Movie_Genre: Genre of the movie watched Seat_Type: Type of seat chosen (e.g., Standard, VIP) Number_of_Person: Number of people included in the booking Purchase_Again: Whether the customer has made a repeat purchase (Yes/No)
+## 🚀 How to Run This Project
 
-Tools & Methodologies: Data Cleaning & Preparation: Python (Pandas, NumPy), SQL for preprocessing Exploratory Data Analysis (EDA): Descriptive statistics, visualization (Matplotlib, Seaborn, Tableau/Power BI) Predictive Modeling: Machine learning techniques (Logistic Regression, Decision Trees) to predict customer retention and pricing effects Statistical Analysis: Chi-square tests, ANOVA, and correlation analysis to validate hypotheses Business Intelligence Reporting: Dashboards for key insights using Power BI/Tableau
+1. **Clone the Repository**
+   ```bash
+   git clone <your-repo-url>
+   cd DataAnalysisProject
+Set Up Virtual Environment
 
-Expected Outcomes: Genre-based audience insights for targeted marketing strategies
 
-Conclusion: By leveraging ticket sales and customer behavior data, this study will provide actionable insights for cinema operators to refine pricing, marketing, and customer engagement strategies. The findings will help drive better decision-making to enhance profitability and customer experience.
+python -m venv venv
+source venv/bin/activate      # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+Run Analysis
+
+To execute the Python script:
+
+
+python main.py
+To view interactive analysis:
+
+
+jupyter notebook notebooks/eda_analysis.ipynb
+📂 Project Structure
+
+DataAnalysisProject/
+├── data/
+│   ├── cinema_hall_ticket_sales.csv      # Original dataset
+│   └── cleaned_cinema_data.csv           # Cleaned dataset
+├── notebooks/
+│   └── eda_analysis.ipynb                # EDA & Hypothesis Testing notebook
+├── visuals/                              # Generated visualizations
+├── main.py                               # Python script version
+├── requirements.txt
+└── README.md
+🔎 Step-by-Step Process
+1️⃣ Data Loading & Cleaning
+Loaded dataset from /data/cinema_hall_ticket_sales.csv
+
+Replaced "Alone" with 1 in Number_of_Person
+
+Converted Purchase_Again from "Yes"/"No" to 1/0
+
+2️⃣ Quick Data Overview
+Used data.info() and data.describe() to understand data types, missing values, and basic statistics.
+
+3️⃣ Exploratory Data Analysis (EDA)
+Generated the following visualizations:
+
+
+Visualization	File Path
+Age Distribution	/visuals/age_distribution.png
+Ticket Price by Seat Type	/visuals/ticket_price_seat_type.png
+Movie Genre Popularity	/visuals/genre_popularity.png
+Repeat Purchase Rate by Age Group	/visuals/repeat_purchase_age_group.png
+Correlation Matrix	/visuals/correlation_matrix.png
+All charts can also be viewed interactively in notebooks/eda_analysis.ipynb.
+
+4️⃣ Hypothesis Testing
+Hypothesis 1:
+Older audiences (>40) prefer premium seating and higher-priced tickets.
+
+Test: Chi-Square Test
+
+Result: p-value = 0.3314 → No significant relationship
+
+Hypothesis 2:
+Younger audiences (18-35) visit more frequently.
+
+Test: Independent T-Test on Purchase_Again
+
+Result: p-value = 0.4218 → No significant difference
+
+Detailed code and outputs are available in notebooks/eda_analysis.ipynb.
+
+5️⃣ Output Files
+Cleaned dataset saved as:
+data/cleaned_cinema_data.csv
+
+Visualizations stored in:
+/visuals/
+
+📊 Key Findings
+No statistically significant evidence for the proposed hypotheses.
+
+VIP and Premium seats are associated with higher ticket prices but not strongly linked to age >40.
+
+Genre Popularity: Comedy and Drama are the most watched genres.
+
+Repeat Purchases: Highest among the 36-50 age group, not necessarily the youngest audience.
+
+🚧 Limitations & Future Work
+The dataset does not include external factors like:
+
+Movie ratings
+
+Date/time of visits
+
+Promotional offers
+
+Future improvements:
+
+Enrich data with seasonal patterns or customer feedback
+
+Apply Machine Learning (next project phase) to predict customer retention (Purchase_Again)
+

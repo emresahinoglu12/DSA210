@@ -1,0 +1,4 @@
+Older audiences which are bigger than 40 prefer Premium seating and higher‐priced tickets
+After binarizing data['Older'] = data['Age'] > 40, you run a chi-square test on the contingency table of Older vs. “Seat_Type == 'Premium'”
+That directly tests whether the over-40 group disproportionately chooses Premium seats (and, by extension, pays higher prices in those seats).
+Younger audiences between 18–35 visits more frequently
